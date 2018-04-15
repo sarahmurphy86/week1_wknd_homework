@@ -25,14 +25,13 @@ def stock_count(amount)
 end
 #
 # # So I want to search through the breeds in the pet shop - need a for loop. If I get a match with the given breed I want to count it. So if I get a match I will pass the match into an array and then count up how many items in the array.I think shop needs to be included somwewhere as it is part of the argument but I dont know where?
-# def all_pets_by_breed(shop,breed)
-#   total = []
-#
-#   for pet in pets
-#     total.push if pet [:breed] == breed
-#   end
-#   return total.length()
-# end
+def pets_by_breed(shop,type)
+  total = []
+  for pet in shop[:pets]
+    total.push (pet) if pet [:breed] == type
+  end
+  return total
+end
 
 # Type in "arthur" we look through all the pet names in the pet shop - need a for loop. If I get a name match, I want to return that pet hash. I think this should also work for the Fred example and return nil.
 
@@ -53,12 +52,14 @@ end
 
 # want to add a new pet into the pet array so that when we count up the items in the array it increases to 7. If we add a pet to stock we need to push this
 
-# def add_pet_to_stock(argument)
-
-#   return [pets]. count
+# def add_pet_to_stock(amount)
+    # total = []
+#   return amount [:pets].count
 # end
 
-# we are trying to call a customer by the index position...
-# def customer_cash()
-#   return
+
+# we are trying to call a customer by their index position we want to see a return of 1000 for positon zero
+
+# def customer_cash(position)
+#   return customers
 # end
