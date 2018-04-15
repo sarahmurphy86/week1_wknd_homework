@@ -6,29 +6,59 @@ def total_cash(shop)
   return shop[:admin][:total_cash]
 end
 
-# Review the two below - I am not sure these are correct
 def add_or_remove_cash(shop,amount)
-  return shop[:admin][:total_cash]+= amount
+  total = 0 +amount.to_i
+  return shop[:admin][:total_cash]+=total
 end
-
-# def add_or_remove_cash(shop,amount)
-#   return shop[:admin][:total_cash]-= amount
-# end
 
 def pets_sold(amount)
   return amount[:admin][:pets_sold]
 end
-#
-# # The one below works - I am not sure how? - I think we need to define the amount?
-def increase_pets_sold (amount,increase)
-  return amount[:admin][:pets_sold]+=increase
-end
 
-# def test_stock_count
-#   count = stock_count(@pet_shop)
-#   assert_equal(6, count)
-# end
+def increase_pets_sold (amount,increase)
+    total = 0+increase.to_i
+    return amount[:admin][:pets_sold]+=total
+end
 
 def stock_count(amount)
   return amount[:pets].count
 end
+#
+# # So I want to search through the breeds in the pet shop - need a for loop. If I get a match with the given breed I want to count it. So if I get a match I will pass the match into an array and then count up how many items in the array.I think shop needs to be included somwewhere as it is part of the argument but I dont know where?
+# def all_pets_by_breed(shop,breed)
+#   total = []
+#
+#   for pet in pets
+#     total.push if pet [:breed] == breed
+#   end
+#   return total.length()
+# end
+
+# Type in "arthur" we look through all the pet names in the pet shop - need a for loop. If I get a name match, I want to return that pet hash. I think this should also work for the Fred example and return nil.
+
+# def find_pet_by_name (pets, name)
+#   for pet in pets[:pets]
+#     if (pet[:name]==name)
+#       return pet
+#     end
+#   end
+# end
+
+# remove a pet by name e.g called Athur, so when you search for it you should get a nil response
+# def remove_pet_by_name(shop, name)
+#   for pet in pets [:pets]
+#   return pet[:pets].delete(name)
+#   end
+# end
+
+# want to add a new pet into the pet array so that when we count up the items in the array it increases to 7. If we add a pet to stock we need to push this
+
+# def add_pet_to_stock(argument)
+
+#   return [pets]. count
+# end
+
+# we are trying to call a customer by the index position...
+# def customer_cash()
+#   return
+# end
